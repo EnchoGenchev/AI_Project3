@@ -63,7 +63,7 @@ class ValueIterationAgent(ValueEstimationAgent):
         # Write value iteration code here
         "*** YOUR CODE HERE ***"
         #update every state with k iterations
-        for i in range(self.iterations):
+        for k in range(self.iterations):
 
             #copy so that previous state values can be used in calculations
             new_values = self.values.copy() 
