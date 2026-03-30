@@ -21,6 +21,52 @@ by their probability to the current state.
 Q3#######################
 
 QS3.1: 
+
+a. 
+discount = .1
+noise = 0
+reward = -1
+
+These values make the agent prefer the close exit risking the cliff because it doesn't think the distant exit is worth
+it since the value is discounted so much. The negative reward also encourages the agent to terminated quickly. 0 noise means
+the agent doesn't see the cliffs so it will risk moving next to them.
+
+b.
+discount = .1
+noise = .1
+reward = -1
+
+Similar to the previous question, the agent prefers the close exit do to the distant exit being discounted and negatively
+rewarded so much, but this time, with noise greater than 0, the agent takes the cliffs into consideration and
+doesn't want to risk moving adjacent to them since there would be a chance that the agent goes into them.
+
+c.
+discount = .1
+noise = 0
+reward = 1
+
+Since the living reward is positive, the agent is rewarded more by taking the path to the more distant reward. 
+Due to the discount, however, the agent is still encouraged to terminate once it gets near the large reward.
+Since there is no noise, the agent doesn't see any risk moving beside the cliffs.
+
+d.
+discount = .1
+noise = .1
+reward = 1
+
+Similar to the last question, the agent finds it optimal to terminate at the larger reward due to the positive living
+reward and the discount factor. With noise greater than 0, however, the agent doesn't want to risk going near the cliffs
+since it could terminate with large negative value, so this makes it take a longer route away from the cliffs.
+
+e.
+discount = 0
+noise = .1
+reward = 100
+
+With 0 discount, .1 noise, and a huge positive living reward, the agent is encouraged to never terminate and 
+never go near any terminal state; it's value can increase infinitely if it never terminates.
+
+
 Q5#######################
 
 QS5.1:
