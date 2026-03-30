@@ -7,8 +7,16 @@
 Answer the supplemental questions here! Make sure you follow the format if it is asked
 Q1#######################
 QS1.1: 
+We implemented computeActionFromValues by first initiliazing the best action and max q value 
+to the minimum possible values, then we loop through all of the possible actions and resulting states.
+We then get the q value from the possible future states and compare them to the previously initialized
+best state and q value, updating them only if the new action has a higher q value. After looping through
+all of the actions, the result is guaranteed to be the best action with the highest q value.
 
 QS1.2:
+ComputeQValueFromValues initializes the q value to 0, and then loops and updates the q value.
+The loop goes through all the possible next states given an action and adds their value multiplied 
+by their probability to the current state.
 
 Q3#######################
 
