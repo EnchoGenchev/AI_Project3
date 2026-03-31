@@ -1,8 +1,11 @@
+Encho Genchev
+Fabian Ochoa
+
+
 
 ######################
 # Supplemental Questions #
 ######################
-
 
 Answer the supplemental questions here! Make sure you follow the format if it is asked
 Q1#######################
