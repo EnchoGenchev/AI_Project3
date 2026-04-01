@@ -73,8 +73,21 @@ never go near any terminal state; it's value can increase infinitely if it never
 Q5#######################
 
 QS5.1:
+getQValue returns the Q-value for a (state, action) pair from a Counter, defaulting to 0.0 for unseen pairs. 
+This means unseen actions can be optimal when all seen actions have negative Q-values.
+computeValueFromQValues returns max_a Q(s,a) over legal actions, or 0.0 for terminal states.
+computeActionFromQValues collects all actions tied for the highest Q-value and picks one randomly with random.choice() to avoid always favoring the same action.
+update applies the Q-learning formula: Q(s,a) <- Q(s,a) + α[r + γ·max_a' Q(s',a') − Q(s,a)]. Each observed transition nudges the Q-value toward the sample estimate. 
+This is off-policy, the max over next-state actions means we learn the optimal policy regardless of what action we actually take.
+Unlike value iteration, Q-learning needs no transition model. It learns directly from (s, a, r, s') experience tuples.
 
 QS5.2 [optional]:
+Screenshot file: QS5_2.png
+With noise=0.2, the Q-values along the optimal path (top row) are 0.14 -> 0.41 -> 0.72 -> 0.94, increasing toward the +1 terminal. 
+A stray 0.02 appears in the middle-left cell where the agent slipped due to noise. Most other states remain at 0.00.
+Compared to noise=0.0, the noisy case has lower Q-values because the agent sometimes slips to unintended states, and convergence 
+is slower since each episode provides noisier samples. The 0.02 in the middle-left cell wouldn't exist without noise. Noise also introduces risk near the -1 terminal, 
+potentially pulling nearby Q-values lower.
 
 Q6#######################
 QS6.1:
