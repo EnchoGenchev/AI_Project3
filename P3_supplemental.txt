@@ -91,9 +91,19 @@ potentially pulling nearby Q-values lower.
 
 Q6#######################
 QS6.1:
+With epsilon=0.1, the agent explores randomly only 10% of the time and exploits its learned Q-values 90% of the time. It quickly converges to the optimal policy and consistently
+follows the best path, with only occasional random deviations. Returns are high and stable after the initial learning phase.
+
+With epsilon=0.9, the agent acts randomly 90% of the time and only follows its best Q-values 10% of the time. It explores extensively
+but rarely exploits what it has learned, so it wanders erratically and frequently stumbles into the -1 terminal or takes long detours. Average
+returns are much lower. The Q-values may still converge toward optimal given enough episodes, but the agent's actual behavior
+remains poor because it almost never follows its own policy.
+
+This matches expectations: low epsilon favors exploitation, high epsilon favors exploration.
+
+## QS6.2
 QS6.2 [optional]:
-
-
+https://drive.google.com/file/d/1DmGL4VcPpvRvYBTDQMa024kKO3Q-5BF1/view?usp=share_link
 
 
 
